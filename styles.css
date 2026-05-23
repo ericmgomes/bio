@@ -24,7 +24,10 @@ body {
   margin: 0;
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #172016;
+  background:
+    linear-gradient(145deg, rgba(16, 31, 24, 0.08), rgba(7, 16, 16, 0.18)),
+    url("assets/background.jpg") center top / cover no-repeat fixed,
+    #bcd783;
 }
 
 a {
@@ -33,13 +36,7 @@ a {
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(145deg, rgba(16, 31, 24, 0.42), rgba(7, 16, 16, 0.72)),
-    url("assets/background.jpg") center top / cover no-repeat;
+  content: none;
 }
 
 .page {
@@ -136,7 +133,12 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--surface-2);
+  color: var(--ink);
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.quick__item:visited {
+  color: var(--ink);
 }
 
 .quick__item:hover,
@@ -146,6 +148,11 @@ h1 {
   border-color: var(--accent);
   color: white;
   outline: none;
+}
+
+.quick__item:hover span,
+.quick__item:focus-visible span {
+  color: white;
 }
 
 .quick__item:hover small,
@@ -175,10 +182,15 @@ h1 {
 
 .quick__item span {
   grid-column: 2;
+  color: #78a9ff;
   font-weight: 850;
   font-size: clamp(0.9rem, 3.5vw, 1.02rem);
   line-height: 1.06;
   overflow-wrap: anywhere;
+}
+
+.quick__item:visited span {
+  color: #78a9ff;
 }
 
 .quick__item small {
@@ -196,6 +208,33 @@ h1 {
   width: 22px;
   height: 22px;
   transition: color 160ms ease, filter 160ms ease;
+}
+
+.brand-mask {
+  background: currentColor;
+  display: block;
+  -webkit-mask: var(--icon-url) center / contain no-repeat;
+  mask: var(--icon-url) center / contain no-repeat;
+}
+
+.whatsapp-icon {
+  --icon-url: url("https://cdn.simpleicons.org/whatsapp");
+  color: #25d366;
+}
+
+.instagram-icon {
+  --icon-url: url("https://cdn.simpleicons.org/instagram");
+  color: #e4405f;
+}
+
+.facebook-icon {
+  --icon-url: url("https://cdn.simpleicons.org/facebook");
+  color: #0866ff;
+}
+
+.spotify-icon {
+  --icon-url: url("https://cdn.simpleicons.org/spotify");
+  color: #1db954;
 }
 
 .brand-icon {
