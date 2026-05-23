@@ -89,11 +89,11 @@ body::before {
 
 .theme-toggle {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 10px;
+  right: 10px;
   z-index: 2;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: grid;
   place-items: center;
   border: 0;
@@ -114,7 +114,7 @@ body::before {
 }
 
 .theme-toggle__icon {
-  font-size: 0.88rem;
+  font-size: 0.76rem;
   line-height: 1;
 }
 
@@ -395,6 +395,7 @@ h1 {
   .quick {
     grid-column: 2;
     grid-row: 1 / span 3;
+    padding-top: 6px;
   }
 }
 
